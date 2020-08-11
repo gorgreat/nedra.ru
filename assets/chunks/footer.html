@@ -1,0 +1,104 @@
+<footer class="page__footer">
+    <div class="wrapper  footer-wrapper">
+        <div class="footer-logo">
+            <img src="[[phpthumb? &input=`[(client_logo)]` &options=`w=150,h=100,q=85,far=C`]]" alt="[(site_name)]"
+                class="logo__img">
+        </div>
+        <div class="footer-nav">
+            [[DLBuildMenu
+            &maxDepth=`1`
+            &TplMainOwner=`@CODE:<ul class="footer-nav__items">[+dl.wrap+]</ul>`
+            &TplOneItem=`@CODE:
+            <li class="footer-nav__item [+dl.class+]">
+                <a href="[+url+]" class='footer-nav__link' title="[+e.title+]">[+title+]</a>[+dl.submenu+]
+
+            </li>`
+            ]]
+        </div>
+        <div class="footer-item">
+            <p class="footer-social__items-title">Мы в социальных сетях</p>
+            <ul class="social__items">
+                [[if? &is=`[(client_vk)]||!empty` &then=`
+                <li class="social__item">
+                    <a rel='nofollow' target='_blank' href="[(client_vk)]" class="social__link">
+                        <svg class="social-icon social-icon__vk" viewBox="0 0 25 25">
+                            <use xlink:href="#vk-icon"></use>
+                        </svg>
+                    </a>` &separator=`||`
+                </li>
+                ]]
+
+                [[if? &is=`[(client_facebook)]||!empty` &then=`
+                <li class="social__item">
+                    <a rel='nofollow' target='_blank' href="[(client_facebook)]" class="social__link">
+                        <svg class="social-icon social-icon__fs" viewBox="0 0 25 25">
+                            <use xlink:href="#fs-icon"></use>
+                        </svg>
+                    </a>` &separator=`||`
+                </li>
+                ]]
+
+                [[if? &is=`[(client_instagtram)]||!empty` &then=`
+                <li class="social__item">
+                    <a rel='nofollow' target='_blank' href="[(client_instagtram)]" class="social__link">
+                        <svg class="social-icon social-icon__in" viewBox="0 0 25 25">
+                            <use xlink:href="#in-icon"></use>
+                        </svg>
+                    </a>` &separator=`||`
+                </li>
+                ]]
+
+                [[if? &is=`[(client_okdnoklassniki)]||!empty` &then=`
+                <li class="social__item">
+                    <a rel='nofollow' target='_blank' href="[(client_okdnoklassniki)]" class="social__link">
+                        <svg class="social-icon social-icon__ok" viewBox="0 0 25 25">
+                            <use xlink:href="#ok-icon"></use>
+                        </svg>
+                    </a>` &separator=`||`
+                </li>
+                ]]
+
+                [[if? &is=`[(client_youtube)]||!empty` &then=`
+                <li class="social__item">
+                    <a rel='nofollow' target='_blank' href="[(client_youtube)]" class="social__link">
+                        <svg class="social-icon social-icon__yt" viewBox="0 0 25 25">
+                            <use xlink:href="#yt-icon"></use>
+                        </svg>
+                    </a>` &separator=`||`
+                </li>
+                ]]
+            </ul>
+            <p><a href="[~3~]" target="_blank" rel="nofollow">Политика конфиденциальности</a></p>
+        </div>
+        <div class="footer-contacts">
+            [[if? &is=`[(client_phone1)]:notempty` &then=`
+            <a class="footer-phone-link" itemprop="telephone" href="tel:[(client_phone1-full)]"> [(client_phone1)]</a>
+            `]]
+            [[if? &is=`[(client_phone2)]:notempty` &then=`
+            <a class="footer-phone-link" itemprop="telephone" href="tel:[(client_phone2-full)]"> [(client_phone2)]</a>
+            `]]
+            [[if? &is=`[(client_address)]||!empty` &then=`
+            <p class="footer-adress">
+                <a href="[~8~]"> [(client_address)]</a>` &separator=`||`
+            </p>
+            ]]
+            [[if? &is=`[(client_workTime)]||!empty` &then=`
+            <p class="footer-workTime">[(client_workTime)]</p>` &separator=`||`
+            ]]
+        </div>
+    </div>
+</footer>
+<p class="copyright">&copy; [[getYear]] <a href="/">[(site_name)]</a></p>
+
+{{callback}}
+
+
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+<script src="template/js/script.js?ver=1"></script>
+
+{{svgSprite}}
+</body>
+
+</html>

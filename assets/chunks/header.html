@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[[metatag? &tag=`title`]]</title>
+    <meta name="keywords" content="[*metakeywords*]">
+    <meta name="description" content="[[metatag? &tag=`desc`]]">
+    <meta property="og:title" content="[[metatag? &tag=`ogtitle`]]" />
+    <meta property="og:url" content="[(site_url)][~[*id*]~]" />
+    <meta property="og:image" content="[[metatag? &tag=`image`]]" />
+    <meta property="og:description" content="[[metatag? &tag=`ogdesc`]]" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="[(site_name)]" />
+    <meta property="og:type" content="website">
+
+    <base href="/" />
+    <meta name="author" content="Egor Makarov">
+    <meta name="copyright" content="www.egormakarov.ru">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    [!css? &files=`template/css/normalize.css, template/css/style.css,` &minify=`1` &folder=`template/css/` !]
+    [[aboveFoldCSS]]
+</head>
+
+<body>
+
+    <header class="page__header">
+        <div class="wrapper  header-wrapper">
+
+            <div class="header__item-logo">
+                <a href="/" class="logo">
+                    <img src="[[phpthumb? &input=`[(client_logo)]` &options=`w=150,h=100,q=85,far=C`]]"
+                        alt="[(site_name)]" class="logo__img"></a>
+            </div>
+
+            <ul class="social__items">
+                [[if? &is=`[(client_vk)]||!empty` &then=`
+                <li class="social__item">
+                    <a rel='nofollow' target='_blank' href="[(client_vk)]" class="social__link">
+                        <svg class="social-icon social-icon__vk" viewBox="0 0 25 25">
+                            <use xlink:href="#vk-icon"></use>
+                        </svg>
+                    </a>` &separator=`||`
+                </li>
+                ]]
+
+                [[if? &is=`[(client_facebook)]||!empty` &then=`
+                <li class="social__item">
+                    <a rel='nofollow' target='_blank' href="[(client_facebook)]" class="social__link">
+                        <svg class="social-icon social-icon__fs" viewBox="0 0 25 25">
+                            <use xlink:href="#fs-icon"></use>
+                        </svg>
+                    </a>` &separator=`||`
+                </li>
+                ]]
+
+                [[if? &is=`[(client_instagtram)]||!empty` &then=`
+                <li class="social__item">
+                    <a rel='nofollow' target='_blank' href="[(client_instagtram)]" class="social__link">
+                        <svg class="social-icon social-icon__in" viewBox="0 0 25 25">
+                            <use xlink:href="#in-icon"></use>
+                        </svg>
+                    </a>` &separator=`||`
+                </li>
+                ]]
+
+                [[if? &is=`[(client_okdnoklassniki)]||!empty` &then=`
+                <li class="social__item">
+                    <a rel='nofollow' target='_blank' href="[(client_okdnoklassniki)]" class="social__link">
+                        <svg class="social-icon social-icon__ok" viewBox="0 0 25 25">
+                            <use xlink:href="#ok-icon"></use>
+                        </svg>
+                    </a>` &separator=`||`
+                </li>
+                ]]
+
+                [[if? &is=`[(client_youtube)]||!empty` &then=`
+                <li class="social__item">
+                    <a rel='nofollow' target='_blank' href="[(client_youtube)]" class="social__link">
+                        <svg class="social-icon social-icon__yt" viewBox="0 0 25 25">
+                            <use xlink:href="#yt-icon"></use>
+                        </svg>
+                    </a>` &separator=`||`
+                </li>
+                ]]
+            </ul>
+
+            <div class="header__item header__item-contact">
+                [[if? &is=`[(client_address)]||!empty` &then=`
+                <p class="header-adress">
+                    <svg class="icon location-icon" viewBox="0 0 30 30">
+                        <use xlink:href="#location-icon"></use>
+                    </svg>
+                    <a href="[~8~]">
+                        [(client_address)]
+                    </a>` &separator=`||`
+                </p>
+                ]]
+
+                [[if? &is=` [(client_email)] ||!empty` &then=`
+                <p class="header-adress">
+                    <svg class="icon mail-icon" viewBox="0 0 30 30">
+                        <use xlink:href="#mail-icon"></use>
+                    </svg>
+                    <a href="mailto:[(client_email)]">
+                        [(client_email)]
+                    </a>` &separator=`||`
+                </p>
+                ]]
+            </div>
+
+            <div class="header__item header__item-phone">
+                <div class="contacts__phone">
+                    [[if? &is=`[(client_viber1)]:=:1` &then=`
+                    <a href="viber://add?number=[(client_phone1-full)]">
+                        <svg class="viber-icon" viewBox="0 0 30 30">
+                            <use xlink:href="#viber-icon"></use>
+                        </svg>
+                    </a>
+                    `]]
+
+                    [[if? &is=`[(client_whatsapp1)]:=:1` &then=`
+                    <a href="whatsapp://send?phone=[(client_phone1-full)]">
+                        <svg class="whatsapp-icon" viewBox="0 0 30 30">
+                            <use xlink:href="#whatsapp-icon"></use>
+                        </svg>
+                    </a>
+                    `]]
+
+                    [[if? &is=`[(client_phone1)]:notempty` &then=`
+                    <a class="phone-link" itemprop="telephone" href="tel:[(client_phone1-full)]"> [(client_phone1)]</a>
+                    `]]
+                </div>
+
+                <div class="contacts__phone">
+                    [[if? &is=`[(client_viber2)]:=:1` &then=`
+                    <a href="viber://add?number=[(client_phone2-full)]">
+                        <svg class="viber-icon" viewBox="0 0 30 30">
+                            <use xlink:href="#viber-icon"></use>
+                        </svg>
+                    </a>
+                    `]]
+
+                    [[if? &is=`[(client_whatsapp2)]:=:1` &then=`
+                    <a href="whatsapp://send?phone=[(client_phone2-full)]">
+                        <svg class="whatsapp-icon" viewBox="0 0 30 30">
+                            <use xlink:href="#whatsapp-icon"></use>
+                        </svg>
+                    </a>
+                    `]]
+
+                    [[if? &is=`[(client_phone2)]:notempty` &then=`
+                    <a class="phone-link" itemprop="telephone" href="tel:[(client_phone2-full)]">[(client_phone2)]</a>
+                    `]]
+                </div>
+                <button class="callback-btn">Заказать звонок</button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="wrapper">			
+			[[DLMenu?
+				&parents=`0`
+				&maxDepth=`2`
+				&outerTpl=`@CODE:<ul class="main-nav__items">[+wrap+]</ul>`
+				&rowTpl=`@CODE:<li class="main-nav__item"><a class="main-nav__link" href="[+url+]">[+title+]</a></li>`
+				&rowHereTpl=`@CODE:<li class="main-nav__item"><a class="main-nav__link main-nav__link-active" href="[+url+]">[+title+]</a></li>`			
+				&parentRowTpl=`@CODE:
+					<li class="main-nav__item">
+						<a class="main-nav__link" href="[+url+]">[+title+] 
+							<svg class="icon arrow-down" viewBox="0 0 10 6">
+								<use xlink:href="#arrow-down"></use>
+							</svg>													
+						</a>[+wrap+]
+					</li>`	
+				&parentRowHereTpl=`@CODE:
+					<li class="main-nav__item">
+						<a class="main-nav__link main-nav__link-active" href="[+url+]">[+title+] 
+							<svg class="icon arrow-down" viewBox="0 0 10 6">
+								<use xlink:href="#arrow-down"></use>
+							</svg>													
+						</a>[+wrap+]
+					</li>`
+				&innerTpl=`@CODE: <ul class="main-nav__sub-items">[+wrap+]</ul>`
+				&innerRowTpl=`@CODE:<li class="main-nav__sub-item"><a class="main-nav__sub-link" href="[+url+]">[+title+]</a></li>`
+
+			]]
+        </div>
+    </nav>
