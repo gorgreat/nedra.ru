@@ -1,3 +1,32 @@
+/* open-sans-regular - latin_cyrillic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/open-sans-v17-latin_cyrillic-regular.eot'); /* IE9 Compat Modes */
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+       url('../fonts/open-sans-v17-latin_cyrillic-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/open-sans-v17-latin_cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/open-sans-v17-latin_cyrillic-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/open-sans-v17-latin_cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/open-sans-v17-latin_cyrillic-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+
+/* open-sans-700 - latin_cyrillic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/open-sans-v17-latin_cyrillic-700.eot'); /* IE9 Compat Modes */
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+       url('../fonts/open-sans-v17-latin_cyrillic-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/open-sans-v17-latin_cyrillic-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/open-sans-v17-latin_cyrillic-700.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/open-sans-v17-latin_cyrillic-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/open-sans-v17-latin_cyrillic-700.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+
+
 html {
   --base: #007cb9;            /* меню, футер */
   --baseDarken: #006ba0;      /* меню активное */
@@ -11,14 +40,13 @@ html {
   --link: #007cb9;            /* ссылка */
   --link-hover: #006ba0;       /* ссылка при наведении */
   --font-inverse: #fff;         /* шрифт на основном цвете */
-  --sliderTitleBg: rgba(45, 178, 159, .7);
-  --sliderDescrBg:rgba(0, 124, 185, .7);
 } 
 
 body {
   font-size: 16px;
-  line-height: 1.2;
-  font-family: sans-serif;
+  line-height: 1.5;
+  font-family: 'Open Sans', arial, sans-serif;
+  font-weight: 400;
   color: var(--font);
 }
 a {
@@ -29,70 +57,11 @@ a {
 a:hover {
   text-decoration: none;
 }
-.wrapper {
-  width: 1200px;
-  margin: 0 auto;
-}
 .dn {
   display: none;
 }
 .form__success, .form__error {
   display: none;
-}
-/*icons*/
-.social-icon {
-  display: inline-block;
-  width: 25px;
-  max-width: 25px;
-  height: 25px;
-  fill: #fff;
-}
-.social-icon__vk {
-  background-color: #4a76a8;
-}
-.social-icon__fs {
-  background-color: #3b5998;
-}
-.social-icon__in {
-  background-color: #c92f87;
-}
-.social-icon__ok {
-  background-color: #ee8208;
-}
-.social-icon__yt {
-  background-color: red;
-}
-.icon {
-  display: inline-block;
-  width: 25px;
-  max-width: 25px;  
-  height: 25px;
-  fill: var(--font);
-}
-.viber-icon {
-  display: inline-block;
-  width: 25px;
-  max-width: 25px;  
-  height: 25px;
-  margin-right: 5px;
-}
-.whatsapp-icon {
-  display: inline-block;
-  width: 25px;
-  max-width: 25px;  
-  height: 25px;  
-  margin-right: 5px;  
-}
-.location-icon {
-  display: inline-block;
-  width: 25px;
-  max-width: 25px;  
-  height: 25px;
-}
-.arrow-down {
-  width: 10px;
-  height: 10px;
-  margin-left: 5px;
 }
 /*breadcrumb*/
 .breadcrumb {
