@@ -126,32 +126,52 @@ Version: 1.4.1
         return false;
     });
     /* sticky */
-    stickyNav = function (navbar, minWidth) {
-        navbar = document.querySelector(navbar);
-        sticky = navbar.offsetTop;
-        minWidth = minWidth ? minWidth : 768;
+    // stickyNav = function (navbar, minWidth) {
+    //     navbar = document.querySelector(navbar);
+    //     sticky = navbar.offsetTop;
+    //     minWidth = minWidth ? minWidth : 768;
 
-        function onScroll() {
-            if (sticky == 0) { sticky = navbar.offsetTop}
-            windowWinth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-            if ((window.pageYOffset >= sticky) && (windowWinth > minWidth)) {
+    //     function onScroll() {
+    //         if (sticky == 0) { sticky = navbar.offsetTop}
+    //         windowWinth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    //         if ((window.pageYOffset >= sticky) && (windowWinth > minWidth)) {
             
-                navbar.classList.add("sticky");
-            } else {
-                navbar.classList.remove("sticky");
-            }
-        }
+    //             navbar.classList.add("sticky");
+    //         } else {
+    //             navbar.classList.remove("sticky");
+    //         }
+    //     }
 
-        document.addEventListener('scroll', onScroll);
-    }
-    stickyNav('.header-bottom', 769);    
+    //     document.addEventListener('scroll', onScroll);
+    // }
+    // stickyNav('.header-bottom', 769);    
     
     /* fancybox */
     $('.fancybox').fancybox(fancyLang);
 
-    /*Открыть попап формы обратного звонка */
-    $('.callback-btn').on('click', function () {
-        $.fancybox.open($('.popup_callback'), fancyLang);
-        return false;
+	$('.partners-slider').slick({
+        dots: true,
+	 	infinite: true,
+	  	slidesToShow: 4,
+        slidesToScroll: 1,
+        arrows: true,
+        autoplay: true,
+        responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]			        
     });
+    
 });
