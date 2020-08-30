@@ -34,13 +34,13 @@
     <header class="page__header">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-6">
                     <a href="/" class="logo">
                         <img src="[[phpthumb? &input=`[(client_logo)]` &options=`w=320,h=100,q=99,far=C`]]"
                             alt="[(site_name)]" class="logo__img">
                     </a>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-6">
                     [[if? &is=`[(client_phone1)]:notempty` &then=`
                     <p>
                         <a class="phone-link" href="tel:[(client_phone1-full)]"> [(client_phone1)]</a>
